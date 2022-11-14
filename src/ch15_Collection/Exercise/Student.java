@@ -17,12 +17,13 @@ public class Student {
 	public int hashCode() {
 		
 		return Objects.hash(studentNum);
+		// return studentNum;
 	}
 
 	
 	@Override
 	public boolean equals(Object obj) {
-		if(!(obj instanceof Student))
+		if(!(obj instanceof Student))		//타입 같은지 먼저 확인
 			return false;
 		Student target = (Student) obj;
 		return studentNum == target.studentNum;
