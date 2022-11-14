@@ -17,8 +17,7 @@ public class Q10_Student implements Comparable{
 			return 0;
 		Q10_Student s = (Q10_Student) o;
 		
-//		return (score == s.score) ? id.compareTo(s.id) : score - s.score ;
-		return 1;
+		return (score == s.score) ? id.compareTo(s.id) : score - s.score ;
 	}
 	
 	
