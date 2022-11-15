@@ -13,8 +13,9 @@ public class Q06_MemberMain {
 				);
 		
 		double avg = list.stream()
-						.mapToInt(s -> s.getage())
-						.peek(s -> System.out.println(s))
+						.mapToInt(s -> s.getAge())
+//						.mapToInt(Q06_Member::getAge)		//읽는법 알아만두고 람다식 사용하자
+//						.peek(s -> System.out.println(s))	
 						.average()
 						.getAsDouble();
 		

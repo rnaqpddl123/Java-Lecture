@@ -10,7 +10,7 @@ public class Q06_Member {
 	}
 	
 	public String getName() { return name;}
-	public int getage() { return age;}
+	public int getAge() { return age;}
 	
 
 }

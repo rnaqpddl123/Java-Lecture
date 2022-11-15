@@ -16,8 +16,9 @@ public class Q07_FilterMain {
 		List<Q07_Member> developers = list.stream()
 										.filter(s -> s.getJob().matches("개발자"))
 										.collect(Collectors.toList());
-		developers.stream()
-					.forEach(s -> System.out.println(s.getName()));
+//										.toList();
+		
+		developers.forEach(s -> System.out.println(s.getName()));
 
 	}
 

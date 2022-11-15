@@ -14,7 +14,8 @@ public class Q05_Example {
 				);
 		
 		list.stream()
-			.filter(s -> s.toLowerCase().contains("java"))
+//			.filter(s -> s.toLowerCase().contains("java"))
+			.filter(s -> s.toLowerCase().indexOf("java") >= 0)
 			.forEach(s -> System.out.println(s));
 
 	}

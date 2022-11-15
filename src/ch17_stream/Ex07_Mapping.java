@@ -15,6 +15,9 @@ public class Ex07_Mapping {
 			.mapToInt(s -> s.getScore())	// s.getScore()를 정수형으로 mapping
 			.forEach(s -> System.out.println(s));
 		
+		
+		
+		
 
 	}
 

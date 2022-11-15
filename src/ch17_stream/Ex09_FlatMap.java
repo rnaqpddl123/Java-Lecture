@@ -27,7 +27,7 @@ public class Ex09_FlatMap {
 			 int[] intArr = new int[strArr.length];
 			 for (int i = 0; i< strArr.length; i++)
 				 intArr[i] = Integer.parseInt(strArr[i].trim());		// .trim()은 space같은게 있으면 없애줌
-//			 System.out.println(Arrays.toString(intArr));				// .flatMapToInt가 언제 적용되는지 궁금해서 찍어봄
+			 System.out.println(Arrays.toString(intArr));				// .flatMapToInt가 언제 적용되는지 궁금해서 찍어봄
 			 return Arrays.stream(intArr);
 		 } )
 		 .forEach(number -> System.out.println(number));
