@@ -2,7 +2,7 @@
  *데이터 조작 언어(DML:Data Manipulation Language)
  */
 
- /*2. Update */
+ /*2. Update(변경) */
 
  # yong-in 시의 이름을 용인으로 변경
 UPDATE city
@@ -19,7 +19,7 @@ UPDATE city
 	SET District = '강원도'
 	WHERE District = 'Kang-won';
 
- /*3. Insert */
+ /*3. Insert (추가)*/
 # 속초시 추가
 INSERT INTO city (`Name`, CountryCode, District, Population)
 	VALUES ('속초', 'KOR', '강원도', 100000);

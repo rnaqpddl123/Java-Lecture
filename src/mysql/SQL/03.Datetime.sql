@@ -50,7 +50,7 @@ SELECT DATE_ADD(NOW(), INTERVAL 40 DAY);
  
 # 날짜 더하기 뺴기 (오늘기준 3달전 )
 SELECT DATE_SUB(NOW(), INTERVAL 3 MONTH);
-`
+
 # D-day  계산
 SELECT TO_DAYS('2023-03-08') - TO_DAYS(NOW());
 
