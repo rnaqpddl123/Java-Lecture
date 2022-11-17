@@ -42,7 +42,10 @@ INSERT INTO koreanCity
 	SELECT * FROM city WHERE CountryCode = 'KOR' ;
 
 
-/*4. DELETE */
+/*4. DELETE 
+ * 실제로는 DELETE 보다 isDELETE를 많이 사용한다.
+ */
+
 # id=4082인 레코드 삭제
 DELETE FROM city WHERE id=4082;
 
@@ -57,7 +60,7 @@ SELECT * FROM koreancity;
 
 
 # View 단순히 보기위해서 만드는테이블(당분간 안쓸것같다.)
-CREATE VIEW largecity AS
-	SELECT * FROM city
+CREATE VIEW largecity 
+	AS SELECT * FROM city
 	WHERE population >5000000;
 SELECT * FROM largecity;
