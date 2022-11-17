@@ -2,6 +2,10 @@ package mysql.customer;
 
 import java.time.LocalDate;
 
+/**
+ * DTO(Data Transfer Object)
+ */
+
 public class Customer {
 	private String uid;
 	private String name;
