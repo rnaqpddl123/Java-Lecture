@@ -21,6 +21,9 @@ SELECT * FROM city;     # city 테이블에 있는 모든 것 출력
 SELECT `Name`, Population FROM city;        # city테이블 아래에서 필요한 항목만 보기 `Name`를 넣으면 이름이 바뀌지않음
 SELECT NOW();
 
+# 다른데이터베이스.테이블명
+SELECT * FROM sakila.actor LIMIT 10;
+
 /* 조회 조건 */
 SELECT * FROM city WHERE countrycode='KOR';     # countrycode='KOR'에 부합하는 데이터만보여줌
 SELECT `Name`, District, Population FROM city WHERE countrycode='KOR';
@@ -34,7 +37,8 @@ SELECT DISTINCT District from city	# DISTINCT(고유한) - 중복없이 보여�
 # 수도권  (서울, 인천, 경기) 도시
 SELECT * from city
 	 WHERE district='Seoul' OR district='Inchon' OR district='kyonggi'	# 대한민국 광역시도명
-
+SELECT * FROM city
+	WHERE District IN ( 'inchon', 'kyonggi' ,'Seoul');		# in사용 (이산적인(diecreate) 값의 조건)
 # 한국의인구수 100만 이상인 도시중 인구수가 홀수인 도시
 SELECT * from city
 	 WHERE CountryCode = 'KOR' And
@@ -200,3 +204,21 @@ SELECT r.Continent, r.Name AS `country`, l.name AS `city`, l.Population
 SELECT CountryCode, `Language` FROM countrylanguage
 	WHERE CountryCode = 'Kor'
 	AND Isofficial = TRUE;  
+
+#  전셰계에서 인구가 가장 많은 10개 도시에서 사용하는 공식 언어는?
+#    (도시명, 인구수, 언어명)
+SELECT l.name, l.population , r.Language FROM city AS l
+	JOIN countrylanguage AS r
+	ON l.countryCode = r.CountryCode
+	WHERE r.Isofficial = TRUE
+	ORDER BY l.population DESC
+	LIMIT 10;
+
+# 다른데이터베이스.테이블명
+SELECT * FROM sakila.actor LIMIT 10;
+
+/* SubQuery */
+# 서울보다 인구가 많은 도시
+SELECT * FROM city
+	WHERE population >
+	(SELECT population FROM city WHERE `NAME` = 'seoul');
