@@ -43,22 +43,55 @@ public class PlayerApp {
 	}
 	public static void registerPlayer() {
 		int backnum = 0;
+		String name = null;
+		String position = null;
+		String birthday = null;
+		int height = 0;
 		while(true) {
 			System.out.print("backnum을 입력하세요> ");
-			backnum = Integer.parseInt(scan.nextLine());
+			String num = scan.nextLine();
+			if (num.length() ==0) {
+				System.out.println("백넘버를 입력해주세요");
+				continue;
+			} 
+			backnum = Integer.parseInt(num);
 			DTO dto = dao.getPlayer(backnum);
 			if (dto.getBacknum() == 0)
 				break;
 			System.out.println("중복된 backnum입니다. 다시 입력하세요");
 		}
 		System.out.print("이름을 입력하세요> ");
-		String name = scan.nextLine();
+		while(true) {
+			name = scan.nextLine();
+			if (name.length() != 0)
+				break;
+			System.out.print("이름을 입력하세요>");
+		}	
 		System.out.print("포지션을 입력하세요> ");
-		String position = scan.nextLine();
+		while(true) {
+			position = scan.nextLine();
+			if (position.length() != 0)
+				break;
+			System.out.print("포지션을 입력하세요>");
+			
+		}	
 		System.out.print("생일을 입력하세요 (예시 2022-11-18)> ");
-		String birthday = scan.nextLine();
-		System.out.print("키를 입력하세요> ");
-		int height = Integer.parseInt(scan.nextLine());
+		while(true) {
+			birthday = scan.nextLine();
+			if (birthday.length() != 0)
+				break;
+			System.out.print("생일을 입력하세요 (예시 2022-11-18)> ");
+			
+		}	
+		System.out.print("키를 입력하세요> ");	
+		while(true) {
+			String h = scan.nextLine();
+			if (h.length() != 0) {
+				height = Integer.parseInt(h);
+				break;
+			}
+			System.out.print("키를 입력하세요> ");	
+		}	
 		DTO dto = new DTO(backnum, name, position, birthday, height);
 		dao.insertPlayer(dto);	
 	}
@@ -67,7 +100,6 @@ public class PlayerApp {
 		int backnum = 0;
 		while(true) {
 			System.out.print("정보 수정을 원하는 선수의 backnum을 입력하세요> ");
-//			backnum = Integer.parseInt(scan.nextLine());
 			String num = scan.nextLine();
 			if (num.length() ==0) {
 				System.out.println("백넘버를 입력해주세요");
@@ -104,7 +136,6 @@ public class PlayerApp {
 		int backnum = Integer.parseInt(scan.nextLine());
 		dao.deletePlayer(backnum);
 		System.out.println(backnum + "번 선수의 정보가 삭제되었습니다.");
-		
 	}
 
 }

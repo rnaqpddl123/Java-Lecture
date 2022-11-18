@@ -143,7 +143,7 @@ public class DAO {
 	
 	public void insertPlayer(DTO dto) {
 		Connection conn = myGetConnection();
-		String sql = "INSERT INTO player(backnum, `name`, position, birthday, height) VALUES(?,?,?,?,?);";
+		String sql = "INSERT INTO player(backnum, `name`, position, birthday, height, isDeleted) VALUES(?,?,?,?,?,0);";
 		try {
 			PreparedStatement pStmt = conn.prepareStatement(sql);
 			pStmt.setInt(1, dto.getBacknum());
