@@ -67,20 +67,32 @@ public class PlayerApp {
 		int backnum = 0;
 		while(true) {
 			System.out.print("정보 수정을 원하는 선수의 backnum을 입력하세요> ");
-			backnum = Integer.parseInt(scan.nextLine());
+//			backnum = Integer.parseInt(scan.nextLine());
+			String num = scan.nextLine();
+			if (num.length() ==0) {
+				System.out.println("백넘버를 입력해주세요");
+				continue;
+			}
+			backnum = Integer.parseInt(num);
 			dto = dao.getPlayer(backnum);
+			
 			if (dto.getBacknum() != 0)
 				break;
 			System.out.println(backnum + "번의 backnum을 가진 선수는 없습니다. 다시입력해주세요");
 		}
+		
 		System.out.print("현재 선수 이름(" + dto.getName() +")에서 변경할 선수이름을 입력해주세요> ");
 		String name = scan.nextLine();
+		name = (name.length() ==0) ? dto.getName() : name; 
 		System.out.print("현재 포지션(" + dto.getposition() +")에서 변경할 포지션을 입력해주세요> ");
 		String position = scan.nextLine();
+		position = (position.length() ==0) ? dto.getposition().toString() : position; 
 		System.out.print("현재 선수 생일(" + dto.getBirthday() +")에서 변경할 선수생일을 입력해주세요> ");
 		String birthday = scan.nextLine();
+		birthday = (birthday.length() ==0) ? dto.getBirthday().toString() : birthday; 
 		System.out.print("현재 선수 키(" + dto.getHeight() +")에서 변경할 선수키를 입력해주세요> ");
-		int height = Integer.parseInt(scan.nextLine());
+		String h = scan.nextLine();
+		int height = (h.length() == 0) ? dto.getHeight() : Integer.parseInt(h); 
 		dto = new DTO(backnum, name, position, birthday, height);
 		dao.updatePlayer(dto);
 		System.out.println("선수 정보가 바뀌었습니다.");
