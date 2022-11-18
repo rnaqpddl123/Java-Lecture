@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
 
-public class App {
+public class CustometApp {
 	private static Scanner scan = new Scanner(System.in);
 	private static DAO dao = new DAO();
 
