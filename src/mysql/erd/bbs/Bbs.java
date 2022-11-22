@@ -2,33 +2,23 @@ package mysql.erd.bbs;
 
 import java.time.LocalDateTime;
 
-public class Board {
+public class Bbs {
 	private int bid;
 	private String btitle;
-	private String bcontent;
-	private String uid;
+	private String uname;
 	private LocalDateTime modTime;
 	private int viewCount;
 	private int replyCount;
-	
-	Board(){}
-	Board(String btitle, String bcontent, String uid) {
-		super();
-		this.btitle = btitle;
-		this.bcontent = bcontent;
-		this.uid = uid;
-	}
-	Board(int bid, String btitle, String bcontent, String uid, LocalDateTime modTime, int viewCount, int replyCount) {
+	Bbs(){}
+	Bbs(int bid, String btitle, String uname, LocalDateTime modTime, int viewCount, int replyCount) {
 		super();
 		this.bid = bid;
 		this.btitle = btitle;
-		this.bcontent = bcontent;
-		this.uid = uid;
+		this.uname = uname;
 		this.modTime = modTime;
 		this.viewCount = viewCount;
 		this.replyCount = replyCount;
 	}
-	
 	
 	public int getBid() {
 		return bid;
@@ -42,17 +32,11 @@ public class Board {
 	public void setBtitle(String btitle) {
 		this.btitle = btitle;
 	}
-	public String getBcontent() {
-		return bcontent;
+	public String getUname() {
+		return uname;
 	}
-	public void setBcontent(String bcontent) {
-		this.bcontent = bcontent;
-	}
-	public String getUid() {
-		return uid;
-	}
-	public void setUid(String uid) {
-		this.uid = uid;
+	public void setUname(String uname) {
+		this.uname = uname;
 	}
 	public LocalDateTime getModTime() {
 		return modTime;
@@ -74,12 +58,9 @@ public class Board {
 	}
 	@Override
 	public String toString() {
-		return "Board [" + bid + btitle + bcontent + uid + modTime.toString().substring(2,16).replace(" ", "T") + viewCount + replyCount + "]";
+		return "Bbs [" + bid + btitle + uname + modTime.toString().substring(2,16).replace(" ", "T")
+				+ viewCount + replyCount + "]";
 	}
 	
 	
-	
-	
-	
-
 }

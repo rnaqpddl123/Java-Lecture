@@ -1,4 +1,4 @@
-package mysql.erd;
+package mysql.erd.bbs;
 /**
  * 비밀번호 해쉬화(암호화)
  * $2a : bcrypt version정보

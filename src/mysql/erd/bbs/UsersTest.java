@@ -1,4 +1,4 @@
-package mysql.erd;
+package mysql.erd.bbs;
 
 import java.util.List;
 import java.util.Scanner;
@@ -11,8 +11,8 @@ public class UsersTest {
 	public static void main(String[] args) {
 		
 		
-//		dao.registerUser(new Users("admin", "admin", "관리자", "admin@mysql.com"));
-//		dao.registerUser(new Users("james", "james", "제임스", "james@mysql.com"));
+		dao.registerUser(new Users("admin", "admin", "관리자", "admin@mysql.com"));
+		dao.registerUser(new Users("james", "james", "제임스", "james@mysql.com"));
 		
 //		List<Users> list = dao.listUsers();
 //		for (Users u :list)
@@ -20,12 +20,12 @@ public class UsersTest {
 //		Users user = dao.getUserinfo("admin");
 //		System.out.println(user);
 		
-		Scanner scan = new Scanner(System.in);
-		System.out.println("uid> ");
-		String uid = scan.nextLine();
-		System.out.println("pwd> ");
-		String pwd = scan.nextLine();
-		login(uid, pwd);
+//		Scanner scan = new Scanner(System.in);
+//		System.out.println("uid> ");
+//		String uid = scan.nextLine();
+//		System.out.println("pwd> ");
+//		String pwd = scan.nextLine();
+//		login(uid, pwd);
 		
 
 		}
